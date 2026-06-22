@@ -2,7 +2,10 @@
 
 ## Unreleased
 
+## v0.3.0 - 2026-06-22
+
 - README: state up front that this is a Visual Studio Code extension and add Marketplace install instructions.
+- README: add a demo GIF (`media/demo.gif`).
 
 ## v0.2.0 - 2026-06-22
 

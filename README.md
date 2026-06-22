@@ -4,6 +4,8 @@
 
 Paste a URL into a Markdown file and get `[Page Title](url)` instead of a bare link. A small, fully auditable VS Code extension with **zero runtime dependencies** that honours your VS Code proxy settings.
 
+![Pasting a URL into a Markdown file turns it into a titled link](media/demo.gif)
+
 ## What it does
 
 - **Paste a URL over a selection** wraps the selected text as the label: `[selection](url)`. No network call.
