@@ -1,5 +1,7 @@
 # Markdown Link Title
 
+*A Visual Studio Code extension.* Install it from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=antoinekh.markdown-link-title), or from the command line with `code --install-extension antoinekh.markdown-link-title`.
+
 Paste a URL into a Markdown file and get `[Page Title](url)` instead of a bare link. A small, fully auditable VS Code extension with **zero runtime dependencies** that honours your VS Code proxy settings.
 
 ## What it does

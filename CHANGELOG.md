@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- README: state up front that this is a Visual Studio Code extension and add Marketplace install instructions.
+
 ## v0.2.0 - 2026-06-22
 
 Maintenance release: dependency upgrades and toolchain modernisation. No runtime behaviour change (still zero runtime dependencies).
