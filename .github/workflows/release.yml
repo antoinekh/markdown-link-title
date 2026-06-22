@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      # Job-level so the Open VSX step's `if` can read it (a step's own `env` is
+      # not exposed to that step's `if` condition).
+      OVSX_PAT: ${{ secrets.OVSX_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Package the extension
+        run: npx @vscode/vsce package --no-dependencies -o extension.vsix
+      - name: Publish to the VS Code Marketplace
+        run: npx @vscode/vsce publish --no-dependencies --packagePath extension.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - name: Publish to Open VSX
+        if: ${{ env.OVSX_PAT != '' }}
+        run: npx ovsx publish extension.vsix

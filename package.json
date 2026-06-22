@@ -1,0 +1,143 @@
+{
+  "name": "markdown-link-title",
+  "displayName": "Markdown Link Title",
+  "description": "Paste a URL in Markdown and get [Page Title](url). Zero dependencies, honours VS Code proxy settings.",
+  "version": "0.1.0",
+  "publisher": "antoinekh",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "author": {
+    "name": "Antoine Keranflech"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antoinekh/markdown-link-title.git"
+  },
+  "homepage": "https://github.com/antoinekh/markdown-link-title#readme",
+  "bugs": {
+    "url": "https://github.com/antoinekh/markdown-link-title/issues"
+  },
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "link",
+    "url",
+    "title",
+    "paste"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdownLinkTitle.resolveTitles",
+        "title": "Resolve Title for URL(s)",
+        "category": "Markdown Link Title"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "markdownLinkTitle.resolveTitles",
+          "when": "editorLangId == markdown"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "markdownLinkTitle.resolveTitles",
+          "when": "editorLangId == markdown && editorHasSelection",
+          "group": "1_modification"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Markdown Link Title",
+      "properties": {
+        "markdownLinkTitle.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Master on/off switch for converting pasted URLs into Markdown links."
+        },
+        "markdownLinkTitle.fetchTitle": {
+          "type": "boolean",
+          "default": true,
+          "description": "Fetch the page title for the pasted URL. When off, behaves like the native paste (inserts an empty label for you to type)."
+        },
+        "markdownLinkTitle.timeoutMs": {
+          "type": "number",
+          "default": 5000,
+          "minimum": 500,
+          "description": "Timeout in milliseconds for the title fetch before falling back to an empty label."
+        },
+        "markdownLinkTitle.preferOpenGraph": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prefer the og:title meta tag over the <title> element when both are present."
+        },
+        "markdownLinkTitle.maxRedirects": {
+          "type": "number",
+          "default": 5,
+          "minimum": 0,
+          "description": "Maximum number of HTTP redirects to follow while resolving a title."
+        },
+        "markdownLinkTitle.userAgent": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "User-Agent header sent with the title fetch. Leave empty to use the default link-preview bot (`Twitterbot/1.0`), which many sites whitelist to return clean `og:title` metadata where a browser User-Agent hits a bot-wall."
+        },
+        "markdownLinkTitle.placeholder": {
+          "type": "string",
+          "default": "fetching…",
+          "description": "Temporary label shown in the link while the title is fetched in the background, e.g. [fetching…](url)."
+        },
+        "markdownLinkTitle.maxBodyKb": {
+          "type": "number",
+          "default": 512,
+          "minimum": 16,
+          "description": "Maximum amount of the response body to read, in kilobytes, while looking for the title."
+        },
+        "markdownLinkTitle.maxTitleLength": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "description": "Maximum length of a fetched title before it is truncated at a word boundary with an ellipsis. 0 disables truncation."
+        },
+        "markdownLinkTitle.linkStyle": {
+          "type": "string",
+          "enum": ["inline", "reference"],
+          "enumDescriptions": [
+            "Insert the URL inline: [title](url).",
+            "Insert a numbered reference [title][1] and append [1]: url at the end of the file."
+          ],
+          "default": "inline",
+          "description": "How to insert the link. 'reference' uses Markdown reference-style links with the URLs collected at the bottom of the file."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./tsconfig.json",
+    "bundle": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "lint": "tsc -p ./tsconfig.json --noEmit",
+    "test": "tsc -p ./tsconfig.json && node --test \"out/test/**/*.test.js\"",
+    "package": "npm run lint && node esbuild.js --production",
+    "vscode:prepublish": "npm run package"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/vscode": "^1.97.0",
+    "@vscode/vsce": "^3.9.2",
+    "esbuild": "^0.24.0",
+    "ovsx": "^0.10.1",
+    "typescript": "^5.7.0"
+  }
+}

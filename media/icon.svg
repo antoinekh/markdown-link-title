@@ -1,0 +1,17 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03a7dd"/>
+      <stop offset="1" stop-color="#0b1f35"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bg)"/>
+  <!-- Markdown link syntax: square brackets around "md" -->
+  <g fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 32H24v64h12"/>
+    <path d="M92 32h12v64H92"/>
+  </g>
+  <!-- "md" wordmark centered between the brackets -->
+  <text x="64" y="65" fill="#ffffff" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="37" font-weight="700" text-anchor="middle" dominant-baseline="central" letter-spacing="-1">md</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#bgB)"/>
+  <!-- Markdown link syntax: big square brackets around a chain link -->
+  <g fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 34H28v60h12"/>
+    <path d="M88 34h12v60H88"/>
+  </g>
+  <!-- Chain link centered between the brackets -->
+  <g fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round">
+    <path d="M55 73a11 11 0 0 0 16 1.2l7-7a11 11 0 0 0-15.6-15.6l-3.6 3.6"/>
+    <path d="M73 55a11 11 0 0 0-16-1.2l-7 7a11 11 0 0 0 15.6 15.6l3.6-3.6"/>
+  </g>
+</svg>
