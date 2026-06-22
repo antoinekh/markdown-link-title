@@ -138,6 +138,6 @@
     "@vscode/vsce": "^3.9.2",
     "esbuild": "^0.28.1",
     "ovsx": "^1.0.1",
-    "typescript": "^5.7.0"
+    "typescript": "^6.0.3"
   }
 }
