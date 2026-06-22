@@ -2,7 +2,7 @@
   "name": "markdown-link-title",
   "displayName": "Markdown Link Title",
   "description": "Paste a URL in Markdown and get [Page Title](url). Zero dependencies, honours VS Code proxy settings.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "antoinekh",
   "license": "MIT",
   "icon": "media/icon.png",
@@ -112,7 +112,10 @@
         },
         "markdownLinkTitle.linkStyle": {
           "type": "string",
-          "enum": ["inline", "reference"],
+          "enum": [
+            "inline",
+            "reference"
+          ],
           "enumDescriptions": [
             "Insert the URL inline: [title](url).",
             "Insert a numbered reference [title][1] and append [1]: url at the end of the file."
