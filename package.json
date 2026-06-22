@@ -2,7 +2,7 @@
   "name": "markdown-link-title",
   "displayName": "Markdown Link Title",
   "description": "Paste a URL in Markdown and get [Page Title](url). Customisable, zero dependencies, honours VS Code proxy settings.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "publisher": "antoinekh",
   "license": "MIT",
   "icon": "media/icon.png",
