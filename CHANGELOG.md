@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## v0.2.0 - 2026-06-22
+
+Maintenance release: dependency upgrades and toolchain modernisation. No runtime behaviour change (still zero runtime dependencies).
+
+- Bumped dev dependencies: TypeScript 6.0, esbuild 0.28, `@types/node` 26, ovsx 1.0; CI actions `checkout` v7 and `setup-node` v6. Resolves all open Dependabot advisories (0 vulnerabilities).
+- Switched TypeScript to `node16` module resolution and explicit `node`/`vscode` type inclusion, as required by TypeScript 6.0 (the previous `node10` resolution and implicit `@types` inclusion are deprecated/removed).
+
 ## v0.1.0 - 2026-06-22
 
 Initial release.
