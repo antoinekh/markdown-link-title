@@ -71,16 +71,3 @@ npm run package    # production bundle for packaging into a .vsix
 Press `F5` in VS Code to launch an Extension Development Host and try it in a Markdown file.
 
 The pure logic (`url.ts`, `titleParser.ts`, `references.ts`, `selectionLinks.ts`, and the proxy resolution in `http.ts`) imports no `vscode` API, so it is unit-tested directly.
-
-## Releasing
-
-CI (`.github/workflows/ci.yml`) runs the tests and a production build on Linux, macOS and Windows for every push and pull request. To publish to the VS Code Marketplace, bump `version` in `package.json`, then push a matching tag:
-
-```bash
-git tag v0.1.0 && git push origin v0.1.0
-```
-
-The release workflow (`.github/workflows/release.yml`) packages the extension once and publishes it on tags matching `v*`:
-
-- **VS Code Marketplace** via `vsce`, using a Personal Access Token in the `VSCE_PAT` repository secret.
-- **Open VSX** (`open-vsx.org`) via `ovsx`, using a token in the `OVSX_PAT` repository secret. This step is skipped when `OVSX_PAT` is not set, so it is optional. Publishing to Open VSX also requires a one-time claimed namespace matching the `publisher` in `package.json`.
