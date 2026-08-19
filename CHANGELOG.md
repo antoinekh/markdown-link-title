@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Bumped dev dependencies: TypeScript 7.0 (the native compiler, distributed as platform binaries), esbuild 0.28.2, `@types/node` 26.2, ovsx 1.1; CI action `setup-node` v7. No runtime behaviour change (still zero runtime dependencies).
+
 ## v0.3.0 - 2026-06-22
 
 - README: state up front that this is a Visual Studio Code extension and add Marketplace install instructions.
