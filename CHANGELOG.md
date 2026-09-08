@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.5.0 - 2026-09-08
+
 - Raised the minimum supported VS Code version to 1.136 (`engines.vscode` and `@types/vscode` are both `^1.136.0`). Installations older than 1.136 keep the last compatible release from the Marketplace instead of updating.
 - Bumped dev dependency `@types/node` to 26.4.1.
 - CI now runs `vsce package` after the build, so a manifest fault such as an `@types/vscode` newer than `engines.vscode` fails the pull request instead of surfacing in the release job.
