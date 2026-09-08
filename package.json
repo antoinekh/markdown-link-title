@@ -18,7 +18,7 @@
     "url": "https://github.com/antoinekh/markdown-link-title/issues"
   },
   "engines": {
-    "vscode": "^1.97.0"
+    "vscode": "^1.136.0"
   },
   "categories": [
     "Formatters",
@@ -137,7 +137,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.4.1",
-    "@types/vscode": "^1.97.0",
+    "@types/vscode": "^1.136.0",
     "@vscode/vsce": "^3.9.2",
     "esbuild": "^0.28.2",
     "ovsx": "^1.1.1",
