@@ -21,3 +21,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run package
+      # Catches a manifest fault here rather than in the release job: vsce
+      # rejects an @types/vscode that is newer than engines.vscode, and
+      # nothing above this step validates the manifest.
+      - run: npx @vscode/vsce package --no-dependencies -o extension.vsix
