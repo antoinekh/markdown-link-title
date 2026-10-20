@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Bumped dev dependencies: `@types/node` 26.6.5, `@vscode/vsce` 4.0.0 and ovsx 1.3.0. `@vscode/vsce` 4 and ovsx 1.3 require Node.js 22, which CI and the release workflow already use. No runtime behaviour change (still zero runtime dependencies).
+- ovsx 1.3.0 no longer writes the personal access token to error messages or CI logs, adds a request inactivity timeout, and no longer leaves a partial file behind when a download fails.
+
 ## v0.5.0 - 2026-09-08
 
 - Raised the minimum supported VS Code version to 1.136 (`engines.vscode` and `@types/vscode` are both `^1.136.0`). Installations older than 1.136 keep the last compatible release from the Marketplace instead of updating.
