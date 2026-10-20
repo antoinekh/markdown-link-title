@@ -4,6 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
+    ignore:
+      # vsce rejects @types/vscode newer than engines.vscode; raise both by hand.
+      - dependency-name: "@types/vscode"
+        update-types:
+          - "version-update:semver-minor"
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
